@@ -28,30 +28,21 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Scaffold Example'),
-      ),
-      body: Center(
-        child: Text('Clicked $_count times '),
-      ),
-      floatingActionButton: FloatingActionButton(
-          onPressed: () => setState((){
-            _count++;
-          }),
-        tooltip: 'Counter',
-        child: Icon(Icons.add),
+        title: Text('Home Activitys'),
+        centerTitle: true,
       ),
       drawer: Drawer(
         elevation: 20.0,
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-                accountName: Text('John Doe'),
-                accountEmail: Text('johndoe@gmail.com'),
+              accountName: Text('John Doe'),
+              accountEmail: Text('johndoe@gmail.com'),
               currentAccountPicture: CircleAvatar(
                 backgroundColor: Colors.white,
                 child:
                 Text(
-                    'J',
+                  'J',
                   style: TextStyle(
                     fontSize: 32,
                   ),
@@ -61,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ListTile(
               title: Text('Inbox',
                 style: TextStyle(
-                  color: Colors.black54
+                    color: Colors.black54
                 ),
               ),
               leading: new Icon(Icons.email),
@@ -100,6 +91,31 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
+      ),
+      body: Container(
+        padding: EdgeInsets.all(8.0),
+        margin: EdgeInsets.all(8.0),
+        /*decoration: BoxDecoration(
+          border: Border.all(color: Colors.blue, width: 2),
+          borderRadius: BorderRadius.circular(8),
+          boxShadow: [
+            BoxShadow(color: Colors.green,offset: new Offset(4.0, 4.0))
+          ],
+        ),*/
+        color: Colors.green,
+        height: 150,
+        alignment: Alignment.center,
+        transform: Matrix4.rotationZ(0.1),
+        child: Text("Hello! I am in the container widget decoration box!!",
+          style: TextStyle(fontSize: 30),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () => setState((){
+            _count++;
+          }),
+        tooltip: 'Counter',
+        child: Icon(Icons.add),
       ),
     );
   }
